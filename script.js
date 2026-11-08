@@ -1113,17 +1113,18 @@
   setTimeout(drawGreetingCard, 250);
 
   // --------------------------------------------------------------------------
-  // 5. FEATURE 2: FESTIVE GIFT VAULT (SOAN PAPDI & MEMBER GIFTS)
+  // 5. FEATURE 2: THE FESTIVE SOAN PAPDI HAMPER (सोन पापड़ी का महा-उपहार)
   // --------------------------------------------------------------------------
-  const btnUnboxSoan = document.getElementById('btn-unbox-soan');
-  const soanUnboxPanel = document.getElementById('soan-unbox-panel');
   const btnEatSoan = document.getElementById('btn-eat-soan');
   const btnPassSoan = document.getElementById('btn-pass-soan');
+  const btnRestockSoan = document.getElementById('btn-restock-soan');
   const soanTallySpan = document.getElementById('soan-tally');
-  const soanPassTracker = document.getElementById('soan-pass-tracker');
+  const soanRelayText = document.getElementById('soan-relay-text');
+  const soanChainCounter = document.getElementById('soan-chain-counter');
+  const soanCubes = document.querySelectorAll('.soan-cube');
 
   let soanEatenCount = 0;
-  let soanPassChainCount = 1;
+  let soanPassChainCount = 0;
 
   const DEPARTMENTS = [
     'Technical', 'Anchoring', 'Graphics', 'Video Editing',
@@ -1131,23 +1132,61 @@
     'PR & Sponsorship', 'Social Media'
   ];
 
-  if (btnUnboxSoan) {
-    btnUnboxSoan.addEventListener('click', () => {
-      soanUnboxPanel.classList.toggle('show');
-      if (soanUnboxPanel.classList.contains('show')) {
-        soundEngine.playSweetChime();
-        showToast('🎁 Soan Papdi box unboxed! Golden flakes, pistachios & pure Diwali love!');
-      }
-    });
+  const DEPT_BANTER = {
+    'Technical': 'debugged the flaky sugar syntax and forwarded to',
+    'Anchoring': 'announced it grandly on the college stage and presented it to',
+    'Graphics': 'color-matched its golden hue to #FFD700 and exported it to',
+    'Video Editing': 'rendered it in 4K 60fps slow-motion and exported to',
+    'Research & Content': 'researched its melt-in-the-mouth chemistry and dispatched to',
+    'Event Management': 'coordinated backstage logistics and smoothly routed it to',
+    'Creative': 'penned an exquisite Diwali poem about silver vark and passed to',
+    'PR & Sponsorship': 'negotiated a grand festive sponsorship deal with',
+    'Social Media': 'posted a viral reel with #WordWizardsDiwali and passed it to'
+  };
+
+  function relishSoanPiece(targetCube) {
+    soanEatenCount++;
+    soundEngine.playSweetChime();
+
+    // Find cube to animate
+    let cubeToEat = targetCube;
+    if (!cubeToEat || cubeToEat.classList.contains('eaten')) {
+      cubeToEat = Array.from(soanCubes).find(c => !c.classList.contains('eaten'));
+    }
+
+    if (cubeToEat) {
+      cubeToEat.classList.add('eaten');
+    }
+
+    if (soanTallySpan) {
+      soanTallySpan.textContent = `${soanEatenCount} ${soanEatenCount === 1 ? 'Piece' : 'Pieces'} Relished`;
+    }
+
+    showToast('😋 Flaky, melt-in-the-mouth Soan Papdi relished! Happy Diwali! 🍬🪔');
+    launchRocket(width * (0.35 + Math.random() * 0.3), height * 0.25);
+
+    const uneatenLeft = Array.from(soanCubes).filter(c => !c.classList.contains('eaten')).length;
+    if (uneatenLeft === 0) {
+      setTimeout(() => {
+        showToast('✨ The box is empty! Click "Restock Sweet Box" for fresh golden cubes! 🍬');
+      }, 900);
+    }
   }
+
+  // Click on individual cubes directly
+  soanCubes.forEach((cube) => {
+    cube.addEventListener('click', () => {
+      if (cube.classList.contains('eaten')) {
+        showToast('That piece was already relished! Click "Restock Sweet Box" to get more! 🍬');
+        return;
+      }
+      relishSoanPiece(cube);
+    });
+  });
 
   if (btnEatSoan) {
     btnEatSoan.addEventListener('click', () => {
-      soanEatenCount++;
-      soundEngine.playSweetChime();
-      if (soanTallySpan) soanTallySpan.textContent = `${soanEatenCount} Pieces Relished`;
-      showToast('😋 Delicious! Flaky Soan Papdi melting in your mouth! Happy Diwali!');
-      launchRocket(width * 0.5, height * 0.3);
+      relishSoanPiece(null);
     });
   }
 
@@ -1160,49 +1199,26 @@
         toDept = DEPARTMENTS[Math.floor(Math.random() * DEPARTMENTS.length)];
       }
 
+      const banter = DEPT_BANTER[fromDept] || 'passed with festive love to';
+
       soundEngine.playBellChime(622.25, 0.25, 2.0);
-      if (soanPassTracker) {
-        soanPassTracker.innerHTML = `📦 <strong>The Sacred Chain:</strong> Passed from <em>${fromDept}</em> to <em>${toDept}</em>! (Total regifts across ADGIPS: ${soanPassChainCount})`;
+      if (soanRelayText) {
+        soanRelayText.innerHTML = `<strong>${fromDept}</strong> ${banter} <strong>${toDept}</strong>!`;
       }
-      showToast(`📦 Passed the Soan Papdi from ${fromDept} to ${toDept}! The legend lives on!`);
+      if (soanChainCounter) {
+        soanChainCounter.textContent = `Total Campus Regifts: ${soanPassChainCount}`;
+      }
+      showToast(`📦 Passed Soan Papdi from ${fromDept} to ${toDept}! The legend lives on!`);
+      launchRocket(width * 0.5, height * 0.3);
     });
   }
 
-  // Fortune Scroll Unroll
-  const btnUnrollFortune = document.getElementById('btn-unroll-fortune');
-  const fortuneRevealBox = document.getElementById('fortune-reveal-box');
-  const fortuneQuoteElem = document.getElementById('fortune-quote-text');
-  const fortuneDestinyElem = document.getElementById('fortune-destiny-text');
-
-  const FORTUNES = [
-    { quote: "“Your voice will anchor a breakthrough debate this semester and inspire your peers.”", destiny: "Destiny: Master Orator of the First Year" },
-    { quote: "“A creative design or video project you craft will trend campus-wide and earn leadership acclaim.”", destiny: "Destiny: Visual Prodigy of Word Wizards" },
-    { quote: "“Your technical prowess will solve a critical backstage puzzle when it matters most.”", destiny: "Destiny: Unsung Hero of the Technical Wing" },
-    { quote: "“Your pen will capture hearts in the college editorial, sparking profound discussions.”", destiny: "Destiny: Wordsmith of High Distinction" },
-    { quote: "“A key sponsorship pitch led by your department will unlock grand festivities for ADGIPS.”", destiny: "Destiny: Strategic Vanguard of PR" }
-  ];
-
-  if (btnUnrollFortune) {
-    btnUnrollFortune.addEventListener('click', () => {
-      const f = FORTUNES[Math.floor(Math.random() * FORTUNES.length)];
-      fortuneQuoteElem.textContent = f.quote;
-      fortuneDestinyElem.textContent = f.destiny;
-      fortuneRevealBox.classList.add('show');
-      soundEngine.playBellChime(523.25, 0.3, 3.0);
-      showToast('📜 Your Word Wizards Diwali Fortune has been revealed!');
-    });
-  }
-
-  // Department Badge Claim
-  const btnClaimBadge = document.getElementById('btn-claim-badge');
-  const badgeDeptSelect = document.getElementById('badge-dept-select');
-
-  if (btnClaimBadge) {
-    btnClaimBadge.addEventListener('click', () => {
-      const dept = badgeDeptSelect ? badgeDeptSelect.value : 'Word Wizards';
+  if (btnRestockSoan) {
+    btnRestockSoan.addEventListener('click', () => {
+      soanCubes.forEach((c) => c.classList.remove('eaten'));
       soundEngine.playSweetChime();
-      showToast(`🌟 Official 1st Year Badge for ${dept} Department claimed! Happy Diwali!`);
-      launchRocket(width * 0.4, height * 0.25);
+      showToast('🍬 Fresh box of Word Wizards Soan Papdi restocked with pistachios & silver vark!');
+      launchRocket(width * 0.5, height * 0.25);
     });
   }
 

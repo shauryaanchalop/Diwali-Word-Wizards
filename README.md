@@ -57,10 +57,11 @@ Features authentic portrait photos, official roles, and heartfelt messages welco
 - **Ansh Bhatt** — *PR & Sponsorship Head*
 - **Tripti Ghildiyal** — *Social Media Head*
 
-### 3. 🍬 The Festive Gift Vault (उपहार पिटारा) & Soan Papdi
-- **The Eternal Soan Papdi Box (सोन पापड़ी)**: Unbox golden flaky cardamom cubes garnished with roasted pistachios and silver vark. Relish a piece (`😋 Relish a Piece`) with crunchy audio, or pass it along to another department (`📦 Regift / Pass to Another Dept!`) in an interactive chain reaction across the 9 departments.
-- **Department Wizard Badge**: Claim your digital 1st-Year badge of honor across the 9 wings.
-- **The Quill of Destiny**: Unroll the enchanted scroll to reveal your personalized college prophecy.
+### 3. 🍬 The Legendary Soan Papdi Hamper (सोन पापड़ी का महा-उपहार)
+- **The Unstoppable Currency of Diwali**: Flaky, melt-in-the-mouth cardamom cubes garnished with roasted pistachios, almonds, and silver vark.
+- **Interactive Cube Relishing**: Click or tap any golden sweet cube in the tray to take a bite with crunchy audio chimes, particle sparkles, and real-time eaten counters (`😋 Relish a Piece!`).
+- **The Sacred Regift Relay (`सोन पापड़ी पास करो!`)**: Experience the timeless Indian tradition of regifting across the 9 departments of Word Wizards with funny, customized department banter and an animated relay tracker.
+- **Instant Restock**: Refresh and replenish the royal sweet box anytime (`🔄 Restock Sweet Box`).
 
 ### 4. 🧨 Virtual Firecracker Simulator (Patakha Arcade)
 - **100% Eco-Friendly & Green**: Pure festive celebration with zero smoke or pollution.
