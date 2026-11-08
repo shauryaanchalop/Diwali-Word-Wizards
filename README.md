@@ -73,11 +73,6 @@ Features authentic portrait photos, official roles, and heartfelt messages welco
   - ✨ **Phuljhadi**: Crisp sparkling neon crackle.
 - **Tap to Burst Anywhere**: Interactive canvas ground responding to mouse clicks and mobile touch taps.
 
-### 5. 🏮 Live Community Wishing Well (Zero Mock Messages)
-- **Real Messages Only**: Empty state encourages first years to be the first to drop a wish.
-- **Instant Cross-Viewer Broadcast**: Uses `BroadcastChannel` and `localStorage` to synchronize wishes in real time across all open tabs and windows without reloading.
-- **Sky Lantern Launch**: Submitting a wish launches an illuminated 3D lantern ascending gracefully into the night sky.
-
 ---
 
 ## 🛠️ Technology Stack
@@ -85,23 +80,22 @@ Features authentic portrait photos, official roles, and heartfelt messages welco
 - **Frontend Core**: Semantic HTML5, Vanilla JavaScript (ES6+), Modern CSS3 (Glassmorphism, KaTeX & Devanagari typography).
 - **Audio Synthesis**: Native Web Audio API (`AudioContext`, `BiquadFilterNode`, `GainNode`, `BufferSource`) with multi-gesture mobile unlock.
 - **Graphic Engines**: Dual HTML5 Canvases for celestial starfields, rising festive embers, sparkler wands, and physical firecracker trajectories.
-- **Real-Time Sync**: Browser `BroadcastChannel` API + `localStorage` storage events + optional Python backend (`server.py`) for `/api/wishes`.
+- **Zero Heavy Dependencies**: Completely self-contained, lightning-fast static client loadable anywhere.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started & Deployment
 
-### Option 1: Direct Run (Client-Only)
-Simply open `index.html` or `standalone_preview.html` in any modern web browser:
+### Quick Local Run
+Simply open `index.html` or `standalone_preview.html` directly in any web browser:
 ```bash
 # On Windows PowerShell
 Start-Process "index.html"
 ```
 
-### Option 2: Run with Persistent Backend Server
-A lightweight, zero-dependency Python server is included to persist community wishes across the local network:
+Or run any local static file server:
 ```bash
-python server.py
+python -m http.server 8000
 # Server runs on http://localhost:8000
 ```
 

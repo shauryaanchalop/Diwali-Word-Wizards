@@ -124,9 +124,7 @@
         <a href="#patakha-simulator" class="btn-ctrl">
           <span>🧨</span> <span>Patakha Arcade</span>
         </a>
-        <a href="#dept-wishes-wall" class="btn-ctrl">
-          <span>🏮</span> <span>Dept Wishes</span>
-        </a>
+
 
         <!-- Social Media Quick Links -->
         <a href="https://www.instagram.com/word.wizards.adgips/" target="_blank" rel="noopener noreferrer" class="btn-ctrl social" title="Follow Word Wizards on Instagram">
@@ -711,105 +709,7 @@
       </p>
     </section>
 
-    <!-- FEATURE 4: DEPARTMENT-WISE WISHING WALL & FLOATING SKY LANTERNS -->
-    <section id="dept-wishes-wall" class="wishing-wall-section">
-      <div class="section-header">
-        <span class="section-tag">Word Wizards Community</span>
-        <h2 class="section-title">Department-Wise Wishing Well</h2>
-        <p class="section-subtitle">
-          Filter and browse heartfelt Diwali blessings across our <strong>9 official departments</strong>, or release your own Sky Lantern!
-        </p>
-      </div>
 
-      <!-- 9 Department Filter Tabs -->
-      <div class="dept-filter-bar">
-        <button class="dept-pill-btn active" data-dept="all">All Departments</button>
-        <button class="dept-pill-btn" data-dept="Technical">Technical</button>
-        <button class="dept-pill-btn" data-dept="Anchoring">Anchoring</button>
-        <button class="dept-pill-btn" data-dept="Graphics">Graphics</button>
-        <button class="dept-pill-btn" data-dept="Video Editing">Video Editing</button>
-        <button class="dept-pill-btn" data-dept="Research & Content">Research & Content</button>
-        <button class="dept-pill-btn" data-dept="Event Management">Event Management</button>
-        <button class="dept-pill-btn" data-dept="Creative">Creative</button>
-        <button class="dept-pill-btn" data-dept="PR & Sponsorship">PR & Sponsorship</button>
-        <button class="dept-pill-btn" data-dept="Social Media">Social Media</button>
-      </div>
-
-      <div class="wishing-container">
-        <!-- Wish Submission Form -->
-        <div class="wish-form-card">
-          <h3>Release a Sky Lantern</h3>
-          <p>Send your festive blessing to fellow first-year wizards in your department.</p>
-
-          <form id="diwali-wish-form">
-            <div class="form-group">
-              <label for="wish-name">Your Full Name</label>
-              <input type="text" id="wish-name" class="form-input" placeholder="e.g. Shaurya Anchal" required>
-            </div>
-
-            <div class="form-group">
-              <label>Your Department(s) <span style="font-size: 0.8rem; font-weight: 400; color: var(--gold-300);">(Select one or more)</span></label>
-              <div id="wish-dept-checkboxes" class="dept-checkbox-grid">
-                <label class="dept-checkbox-pill">
-                  <input type="checkbox" name="wish_dept" value="Technical" checked>
-                  <span class="pill-content">Technical</span>
-                </label>
-                <label class="dept-checkbox-pill">
-                  <input type="checkbox" name="wish_dept" value="Anchoring">
-                  <span class="pill-content">Anchoring</span>
-                </label>
-                <label class="dept-checkbox-pill">
-                  <input type="checkbox" name="wish_dept" value="Graphics">
-                  <span class="pill-content">Graphics</span>
-                </label>
-                <label class="dept-checkbox-pill">
-                  <input type="checkbox" name="wish_dept" value="Video Editing">
-                  <span class="pill-content">Video Editing</span>
-                </label>
-                <label class="dept-checkbox-pill">
-                  <input type="checkbox" name="wish_dept" value="Research & Content">
-                  <span class="pill-content">Research & Content</span>
-                </label>
-                <label class="dept-checkbox-pill">
-                  <input type="checkbox" name="wish_dept" value="Event Management">
-                  <span class="pill-content">Event Management</span>
-                </label>
-                <label class="dept-checkbox-pill">
-                  <input type="checkbox" name="wish_dept" value="Creative">
-                  <span class="pill-content">Creative</span>
-                </label>
-                <label class="dept-checkbox-pill">
-                  <input type="checkbox" name="wish_dept" value="PR & Sponsorship">
-                  <span class="pill-content">PR & Sponsorship</span>
-                </label>
-                <label class="dept-checkbox-pill">
-                  <input type="checkbox" name="wish_dept" value="Social Media">
-                  <span class="pill-content">Social Media</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="wish-text">Your Diwali Wish / Message</label>
-              <textarea id="wish-text" rows="3" class="form-textarea" placeholder="Wishing all first-year Word Wizards endless joy, radiant debriefs, and brilliant creative milestones!" required></textarea>
-            </div>
-
-            <button type="submit" class="btn-submit-wish">
-              <span>🏮</span> Light & Release Sky Lantern
-            </button>
-          </form>
-        </div>
-
-        <!-- Live Stream of Department Wishes -->
-        <div class="wishes-stream-wrapper">
-          <div class="wishes-stream-header">
-            <h4>Department Dispatches</h4>
-            <span id="wish-count-pill" class="wishes-count-pill">Loading wishes...</span>
-          </div>
-          <div id="wishes-stream" class="wishes-stream"></div>
-        </div>
-      </div>
-    </section>
 
     <!-- OFFICIAL SOCIAL CONNECT & COMMUNITY BANNER -->
     <section class="social-connect-banner">
