@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Diwali • Word Wizards | First Year Student Development Society</title>
+  <meta name="description" content="Celebrate Deepavali with Word Wizards, the First Year Student Development Society of ADGIPS. Member Gift Card, Council Wishes, Festive Soan Papdi Vault, Virtual Firecrackers & Department Wishes.">
+
+  <!-- Google Fonts: Premium Devanagari 'Rozha One' & 'Tiro Devanagari Hindi', plus Classical Serif 'Cinzel' -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="assets/logo_data.js"></script>
+</head>
+<body>
+
+  <!-- Background Animated Canvases -->
+  <canvas id="bg-canvas"></canvas>
+  <canvas id="sparkler-canvas"></canvas>
+
+  <!-- Festive Traditional Marigold & Mango Leaves Toran -->
+  <header class="toran-banner" aria-hidden="true">
+    <svg class="toran-svg" viewBox="0 0 1200 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,15 Q300,45 600,15 Q900,45 1200,15" stroke="#f5b82e" stroke-width="3" stroke-dasharray="6,4" fill="none"/>
+      <g id="garland-units">
+        <circle cx="100" cy="30" r="14" fill="#ff7800"/>
+        <circle cx="100" cy="30" r="9" fill="#ffd000"/>
+        <path d="M92,30 Q100,58 100,68 Q100,58 108,30 Z" fill="#1b8a36"/>
+        <circle cx="100" cy="68" r="4" fill="#ffd700"/>
+
+        <circle cx="200" cy="36" r="15" fill="#ff9900"/>
+        <circle cx="200" cy="36" r="10" fill="#ffd000"/>
+        <path d="M192,36 Q200,66 200,75 Q200,66 208,36 Z" fill="#239c40"/>
+        <circle cx="200" cy="75" r="4" fill="#ffd700"/>
+
+        <circle cx="300" cy="38" r="16" fill="#e65100"/>
+        <circle cx="300" cy="38" r="10" fill="#ffb300"/>
+        <path d="M291,38 Q300,70 300,80 Q300,70 309,38 Z" fill="#1b8a36"/>
+        <circle cx="300" cy="80" r="5" fill="#ffd700"/>
+
+        <circle cx="400" cy="34" r="15" fill="#ff9900"/>
+        <circle cx="400" cy="34" r="10" fill="#ffd000"/>
+        <path d="M392,34 Q400,64 400,74 Q400,64 408,34 Z" fill="#239c40"/>
+        <circle cx="400" cy="74" r="4" fill="#ffd700"/>
+
+        <circle cx="500" cy="24" r="14" fill="#ff7800"/>
+        <circle cx="500" cy="24" r="9" fill="#ffd000"/>
+        <path d="M492,24 Q500,52 500,62 Q500,52 508,24 Z" fill="#1b8a36"/>
+        <circle cx="500" cy="62" r="4" fill="#ffd700"/>
+
+        <circle cx="600" cy="18" r="18" fill="#d13212"/>
+        <circle cx="600" cy="18" r="12" fill="#ffaa00"/>
+        <path d="M590,18 Q600,60 600,72 Q600,60 610,18 Z" fill="#15752c"/>
+        <circle cx="600" cy="73" r="6" fill="#ffd700"/>
+
+        <circle cx="700" cy="24" r="14" fill="#ff7800"/>
+        <circle cx="700" cy="24" r="9" fill="#ffd000"/>
+        <path d="M692,24 Q700,52 700,62 Q700,52 708,24 Z" fill="#1b8a36"/>
+        <circle cx="700" cy="62" r="4" fill="#ffd700"/>
+
+        <circle cx="800" cy="34" r="15" fill="#ff9900"/>
+        <circle cx="800" cy="34" r="10" fill="#ffd000"/>
+        <path d="M792,34 Q800,64 800,74 Q800,64 808,34 Z" fill="#239c40"/>
+        <circle cx="800" cy="74" r="4" fill="#ffd700"/>
+
+        <circle cx="900" cy="38" r="16" fill="#e65100"/>
+        <circle cx="900" cy="38" r="10" fill="#ffb300"/>
+        <path d="M891,38 Q900,70 900,80 Q900,70 909,38 Z" fill="#1b8a36"/>
+        <circle cx="900" cy="80" r="5" fill="#ffd700"/>
+
+        <circle cx="1000" cy="36" r="15" fill="#ff9900"/>
+        <circle cx="1000" cy="36" r="10" fill="#ffd000"/>
+        <path d="M992,36 Q1000,66 1000,75 Q1000,66 1008,36 Z" fill="#239c40"/>
+        <circle cx="1000" cy="75" r="4" fill="#ffd700"/>
+
+        <circle cx="1100" cy="30" r="14" fill="#ff7800"/>
+        <circle cx="1100" cy="30" r="9" fill="#ffd000"/>
+        <path d="M1092,30 Q1100,58 1100,68 Q1100,58 1108,30 Z" fill="#1b8a36"/>
+        <circle cx="1100" cy="68" r="4" fill="#ffd700"/>
+      </g>
+    </svg>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+      <div class="society-brand">
+        <div class="society-logo-badge" title="Word Wizards Official Logo">
+          <img src="https://res.cloudinary.com/donf76gql/image/upload/v1791469094/cropped_circle_ww_logo_bxjh0m.png" alt="Word Wizards Logo" class="society-logo-img">
+        </div>
+        <div class="brand-text">
+          <h1>Word Wizards</h1>
+          <p>The First Year Student Development Society <span class="adgips-tag">• ADGIPS</span></p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <a href="#card-gift-studio" class="btn-ctrl highlight">
+          <span>🎁</span> <span>Member Card Gift</span>
+        </a>
+        <a href="#council-wishes" class="btn-ctrl">
+          <span>👑</span> <span>Council Wishes</span>
+        </a>
+        <a href="#gift-vault" class="btn-ctrl">
+          <span>🍬</span> <span>Soan Papdi & Gifts</span>
+        </a>
+        <a href="#patakha-simulator" class="btn-ctrl">
+          <span>🧨</span> <span>Patakha Arcade</span>
+        </a>
+        <a href="#dept-wishes-wall" class="btn-ctrl">
+          <span>🏮</span> <span>Dept Wishes</span>
+        </a>
+
+        <!-- Social Media Quick Links -->
+        <a href="https://www.instagram.com/word.wizards.adgips/" target="_blank" rel="noopener noreferrer" class="btn-ctrl social" title="Follow Word Wizards on Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/word-wizards-adgips/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="btn-ctrl social" title="Word Wizards LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:wordwizards@adgips.ac.in" class="btn-ctrl social" title="Email Word Wizards">
+          <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+        </a>
+
+        <button id="btn-nav-sound" class="btn-ctrl" title="Toggle Festive Sitar & Bell Ambiance">
+          <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          <span class="btn-label">Sound</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Celebration Section -->
+    <section class="hero-section">
+      <div class="hero-pretitle">
+        <span>✨</span> The Grand Festival of Lights & Eloquence <span>✨</span>
+      </div>
+
+      <!-- Premium High-End Devanagari Display -->
+      <h2 class="hero-title-sanskrit">शुभ दीपावली</h2>
+      <h3 class="hero-society-name">Word Wizards</h3>
+      <div class="hero-society-subtitle">The First Year Student Development Society of ADGIPS</div>
+
+      <p class="hero-dedication">
+        Specially dedicated to all <strong>First-Year Students who are members of Word Wizards</strong>! 
+        Conferred with pride, mentorship, and warm festive blessings by our <strong>Faculty Coordinator & Executive Council</strong>.
+        May this auspicious festival spark boundless imagination, fearless oratory, and unforgettable achievements throughout your college journey!
+      </p>
+
+      <!-- Centerpiece Interactive Ceremonial Diya -->
+      <div class="diya-centerpiece-wrapper">
+        <div id="ceremonial-diya-stage" class="ceremonial-diya-stage" title="Click or tap to ignite the Ceremonial Diya!">
+          <div class="diya-ambient-glow"></div>
+
+          <div class="grand-flame-anchor">
+            <div class="flame-particle flame-outer"></div>
+            <div class="flame-particle flame-mid"></div>
+            <div class="flame-particle flame-core"></div>
+            <div class="flame-spark"></div>
+            <div class="flame-spark"></div>
+            <div class="flame-spark"></div>
+          </div>
+
+          <svg class="diya-svg-container" viewBox="0 0 280 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="140" cy="160" rx="60" ry="12" fill="url(#brass-dark)"/>
+            <path d="M100 160 C100 148 115 138 140 138 C165 138 180 148 180 160 Z" fill="url(#brass-grad)"/>
+
+            <path d="M30 115 C30 152 75 162 140 162 C205 162 250 152 250 115 C250 100 220 90 140 90 C60 90 30 100 30 115 Z" fill="url(#brass-grad)" stroke="#ffe082" stroke-width="2"/>
+
+            <ellipse cx="140" cy="112" rx="105" ry="24" fill="url(#oil-deep)" stroke="#f5b82e" stroke-width="2.5"/>
+            <ellipse cx="140" cy="112" rx="85" ry="16" fill="url(#oil-glow)"/>
+
+            <path d="M136 100 C136 88 140 76 140 76 C140 76 144 88 144 100 Z" fill="#3a1b00"/>
+
+            <circle cx="140" cy="142" r="8" fill="#f5b82e" opacity="0.8"/>
+            <circle cx="110" cy="138" r="6" fill="#f5b82e" opacity="0.6"/>
+            <circle cx="170" cy="138" r="6" fill="#f5b82e" opacity="0.6"/>
+            <circle cx="82" cy="130" r="4" fill="#f5b82e" opacity="0.5"/>
+            <circle cx="198" cy="130" r="4" fill="#f5b82e" opacity="0.5"/>
+
+            <defs>
+              <linearGradient id="brass-grad" x1="30" y1="90" x2="250" y2="162" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#f5b82e"/>
+                <stop offset="35%" stop-color="#ffd56b"/>
+                <stop offset="70%" stop-color="#c9820a"/>
+                <stop offset="100%" stop-color="#7a4600"/>
+              </linearGradient>
+              <linearGradient id="brass-dark" x1="80" y1="148" x2="200" y2="172" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#693700"/>
+                <stop offset="100%" stop-color="#331900"/>
+              </linearGradient>
+              <radialGradient id="oil-deep" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#5e1502"/>
+                <stop offset="70%" stop-color="#8a2e05"/>
+                <stop offset="100%" stop-color="#401000"/>
+              </radialGradient>
+              <radialGradient id="oil-glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffb833"/>
+                <stop offset="50%" stop-color="#ff6a00"/>
+                <stop offset="100%" stop-color="#992b00"/>
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <button id="btn-light-ceremonial" class="diya-action-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+          Light the Ceremonial Diya
+        </button>
+        <span id="diya-status-pill" class="diya-status-pill">Touch or click the Diya to illuminate Word Wizards</span>
+
+        <div id="blessing-box" class="blessing-box">
+          <p class="blessing-quote-hindi">
+            “दीपक की ज्योति और शब्दों का तेज, दोनों ही अंधकार को मिटाने का सामर्थ्य रखते हैं।”
+          </p>
+          <p class="blessing-quote-english">
+            Just as a single diya dispels centuries of darkness, may your words dispel silence, doubt, and fear. 
+            May this Deepavali bestow upon every first-year Word Wizard the gift of profound expression, gracious leadership, and lifelong brotherhood!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE 1 (MAIN HERO GIFT): WORD WIZARDS MEMBER CARD STUDIO -->
+    <section id="card-gift-studio" class="card-gift-showcase-section">
+      <div class="section-header">
+        <div class="card-gift-ribbon-badge">
+          <span>🎁</span> The Signature Diwali Gift for Word Wizards First-Year Members
+        </div>
+        <h2 class="section-title">Your Exclusive Member Keepsake Card</h2>
+        <p class="section-subtitle">
+          Personalized with the <strong>Official Word Wizards Crest</strong>, your name, and your society department. 
+          Rendered in ultra-high resolution (1200 × 800) — download as a keepsake for WhatsApp & Instagram!
+        </p>
+      </div>
+
+      <div class="generator-grid">
+        <!-- Controls -->
+        <div class="generator-controls">
+          <div class="form-group">
+            <label for="card-name-input">Your Full Name (First-Year Member)</label>
+            <input type="text" id="card-name-input" class="form-input" value="Shaurya Anchal" placeholder="e.g. Shaurya Anchal">
+          </div>
+
+          <div class="form-group">
+            <label>Your Department(s) <span style="font-size: 0.8rem; font-weight: 400; color: var(--gold-300);">(Select one or more)</span></label>
+            <div id="card-dept-checkboxes" class="dept-checkbox-grid">
+              <label class="dept-checkbox-pill">
+                <input type="checkbox" name="card_dept" value="Technical" checked>
+                <span class="pill-content">Technical</span>
+              </label>
+              <label class="dept-checkbox-pill">
+                <input type="checkbox" name="card_dept" value="Anchoring">
+                <span class="pill-content">Anchoring</span>
+              </label>
+              <label class="dept-checkbox-pill">
+                <input type="checkbox" name="card_dept" value="Graphics">
+                <span class="pill-content">Graphics</span>
+              </label>
+              <label class="dept-checkbox-pill">
+                <input type="checkbox" name="card_dept" value="Video Editing">
+                <span class="pill-content">Video Editing</span>
+              </label>
+              <label class="dept-checkbox-pill">
+                <input type="checkbox" name="card_dept" value="Research & Content">
+                <span class="pill-content">Research & Content</span>
+              </label>
+              <label class="dept-checkbox-pill">
+                <input type="checkbox" name="card_dept" value="Event Management">
+                <span class="pill-content">Event Management</span>
+              </label>
+              <label class="dept-checkbox-pill">
+                <input type="checkbox" name="card_dept" value="Creative">
+                <span class="pill-content">Creative</span>
+              </label>
+              <label class="dept-checkbox-pill">
+                <input type="checkbox" name="card_dept" value="PR & Sponsorship">
+                <span class="pill-content">PR & Sponsorship</span>
+              </label>
+              <label class="dept-checkbox-pill">
+                <input type="checkbox" name="card_dept" value="Social Media">
+                <span class="pill-content">Social Media</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="card-quote-select">Select Festive Blessing / Couplet</label>
+            <select id="card-quote-select" class="form-select">
+              <option value="May the sacred light of Diwali inspire your voice, elevate your intellect, and bring triumph in all your endeavors.">May the sacred light of Diwali inspire your voice, elevate your intellect, and bring triumph in all your endeavors.</option>
+              <option value="Where words ignite minds and lights illuminate futures. Happy Deepavali to our first-year family!">Where words ignite minds and lights illuminate futures. Happy Deepavali to our first-year family!</option>
+              <option value="May your thoughts be as bright as festive diyas and your words as enduring as timeless poetry.">May your thoughts be as bright as festive diyas and your words as enduring as timeless poetry.</option>
+              <option value="Leading from darkness to light, ignorance to wisdom, and silence to eloquent brilliance.">Leading from darkness to light, ignorance to wisdom, and silence to eloquent brilliance.</option>
+            </select>
+          </div>
+
+          <div class="card-actions-row">
+            <button id="btn-download-card" class="btn-card-action download">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/>
+              </svg>
+              Download Member Gift (PNG)
+            </button>
+            <button id="btn-copy-wish" class="btn-card-action share">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+              </svg>
+              Copy WhatsApp Greeting
+            </button>
+          </div>
+
+          <div class="insta-share-tip">
+            <span>📸 Tip:</span> Post your card on Instagram Stories & tag <a href="https://www.instagram.com/word.wizards.adgips/" target="_blank" rel="noopener noreferrer">@word.wizards.adgips</a>
+          </div>
+        </div>
+
+        <!-- Real-time Preview Area -->
+        <div class="card-preview-area">
+          <canvas id="greeting-canvas" width="1200" height="800"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW SECTION: WISHES FROM THE WORD WIZARDS COUNCIL -->
+    <section id="council-wishes" class="council-section">
+      <div class="section-header">
+        <span class="section-tag">Leadership & Mentorship</span>
+        <h2 class="section-title">Diwali Blessings from the Council</h2>
+        <p class="section-subtitle">
+          Our Faculty Coordinator, Executive Leadership, and Department Heads extend their warmest festive blessings to all First-Year Word Wizards!
+        </p>
+      </div>
+
+      <!-- Faculty Coordinator Spotlight Card -->
+      <div class="faculty-spotlight-card">
+        <img src="https://res.cloudinary.com/donf76gql/image/upload/v1781538074/faculty_takcad.jpg" alt="Dr. Surayya Farhat" class="faculty-avatar-img" loading="lazy">
+        <h3>Dr. Surayya Farhat</h3>
+        <span class="faculty-role-tag">Faculty Coordinator • Word Wizards</span>
+        <p class="faculty-message">
+          “To every first-year student embarking on this literary and self-development voyage with Word Wizards: 
+          May the sacred lamp of Deepavali illuminate your intellect, instill fearlessness in your pursuits, and bless you with academic distinction and personal growth. 
+          Welcome to our vibrant family—shine brightly at ADGIPS and beyond!”
+        </p>
+      </div>
+
+      <!-- Executive & Department Heads Grid (3 per row on PC) -->
+      <div class="council-grid">
+        <!-- Lavnish -->
+        <div class="council-card leadership-card">
+          <img src="https://res.cloudinary.com/donf76gql/image/upload/v1781524544/L4vnish_dutxul.jpg" alt="Lavnish" class="council-avatar-img" loading="lazy">
+          <h4>Lavnish</h4>
+          <div class="council-dept-title">President</div>
+          <p class="council-wish-text">
+            “Welcome to the fraternity, first years! May your creative fire burn bright, your voice champion truth, and your leadership shine throughout your college years. Happy Diwali!”
+          </p>
+        </div>
+
+        <!-- Kashish Negi -->
+        <div class="council-card leadership-card">
+          <img src="https://res.cloudinary.com/donf76gql/image/upload/v1781539806/kashish_jazsz6.jpg" alt="Kashish Negi" class="council-avatar-img" loading="lazy">
+          <h4>Kashish Negi</h4>
+          <div class="council-dept-title">Vice President</div>
+          <p class="council-wish-text">
+            “Cherish every opportunity to speak, create, and lead. Let’s make this first year a transformative, unforgettable chapter in your life. Shubh Deepavali!”
+          </p>
+        </div>
+
+        <!-- Shaurya Anchal -->
+        <div class="council-card leadership-card">
+          <img src="https://res.cloudinary.com/donf76gql/image/upload/f_auto,q_auto/v1789914786/Copy_of_IMG_1406_gj5srv_px7w0a.jpg" alt="Shaurya Anchal" class="council-avatar-img" loading="lazy">
+          <h4>Shaurya Anchal</h4>
+          <div class="council-dept-title">General Secretary & Technical Head</div>
+          <p class="council-wish-text">
+            “May your logic be unbreakable, your ideas limitless, and your Diwali full of light, code, and celebration! Happy Diwali to all first-year wizards!”
+          </p>
+        </div>
+
+        <!-- Aprajita Sharma -->
+        <div class="council-card">
+          <img src="https://res.cloudinary.com/donf76gql/image/upload/v1779095965/aprajita_y5xc8r.jpg" alt="Aprajita Sharma" class="council-avatar-img" loading="lazy">
+          <h4>Aprajita Sharma</h4>
+          <div class="council-dept-title">Anchoring Head</div>
+          <p class="council-wish-text">
+            “Speak with conviction, own every stage, and let your words carry warmth like a festive flame. Wishing you a silver-tongued Deepavali!”
+          </p>
+        </div>
+
+        <!-- Manasvani Gandhi -->
+        <div class="council-card">
+          <img src="https://i.ibb.co/wN9tZ48j/manasvani.jpg" alt="Manasvani Gandhi" class="council-avatar-img" loading="lazy">
+          <h4>Manasvani Gandhi</h4>
+          <div class="council-dept-title">Graphics Co-Head</div>
+          <p class="council-wish-text">
+            “Design your dreams boldly! May this festival saturate your world with radiant inspiration, bold palettes, and creative joy.”
+          </p>
+        </div>
+
+        <!-- Tanya Thakur -->
+        <div class="council-card">
+          <img src="https://res.cloudinary.com/donf76gql/image/upload/v1781543965/tanya_xkh9wg.jpg" alt="Tanya Thakur" class="council-avatar-img" loading="lazy">
+          <h4>Tanya Thakur</h4>
+          <div class="council-dept-title">Graphics Co-Head</div>
+          <p class="council-wish-text">
+            “Wishing every first-year visual creator endless aesthetic breakthroughs, high-resolution triumphs, and vibrant Diwali celebrations!”
+          </p>
+        </div>
+
+        <!-- Shivam Kaushik -->
+        <div class="council-card">
+          <img src="https://res.cloudinary.com/donf76gql/image/upload/v1779095966/shivam_hnmhth.jpg" alt="Shivam Kaushik" class="council-avatar-img" loading="lazy">
+          <h4>Shivam Kaushik</h4>
+          <div class="council-dept-title">Video Editing Head</div>
+          <p class="council-wish-text">
+            “Capture every memory, edit out all self-doubt, and render a cinematic, 60 FPS journey at ADGIPS. Happy Deepavali!”
+          </p>
+        </div>
+
+        <!-- Pratyush Kumar Jha -->
+        <div class="council-card">
+          <img src="https://res.cloudinary.com/donf76gql/image/upload/v1779095971/pratyush_svvzsf.jpg" alt="Pratyush Kumar Jha" class="council-avatar-img" loading="lazy">
+          <h4>Pratyush Kumar Jha</h4>
+          <div class="council-dept-title">Content Head</div>
+          <p class="council-wish-text">
+            “May your thoughts delve deep into wisdom, and your words build bridges of understanding. Keep crafting literary magic!”
+          </p>
+        </div>
+
+        <!-- Drishti Sahu -->
+        <div class="council-card">
+          <img src="https://res.cloudinary.com/donf76gql/image/upload/v1779095963/drishti_y6dvnj.jpg" alt="Drishti Sahu" class="council-avatar-img" loading="lazy">
+          <h4>Drishti Sahu</h4>
+          <div class="council-dept-title">Event Head</div>
+          <p class="council-wish-text">
+            “Here is to flawless execution, unmatched crowd energy, zero backstage panic, and the brightest celebrations for our first-year family!”
+          </p>
+        </div>
+
+        <!-- Sangini Sharma -->
+        <div class="council-card">
+          <img src="https://res.cloudinary.com/donf76gql/image/upload/v1779095963/sangini_aqm2l8.jpg" alt="Sangini Sharma" class="council-avatar-img" loading="lazy">
+          <h4>Sangini Sharma</h4>
+          <div class="council-dept-title">Creative Head</div>
+          <p class="council-wish-text">
+            “May your imagination paint constellations out of simple ink. Welcome to the magic of Word Wizards—have a creative & blessed Diwali!”
+          </p>
+        </div>
+
+        <!-- Ansh Bhatt -->
+        <div class="council-card">
+          <img src="https://res.cloudinary.com/donf76gql/image/upload/v1779095968/ansh_cv7sfk.jpg" alt="Ansh Bhatt" class="council-avatar-img" loading="lazy">
+          <h4>Ansh Bhatt</h4>
+          <div class="council-dept-title">PR & Sponsorship Head</div>
+          <p class="council-wish-text">
+            “Securing 100% happiness deliverables, pitching light over darkness! Wishing all first years endless prosperity and networking success!”
+          </p>
+        </div>
+
+        <!-- Tripti Ghildiyal -->
+        <div class="council-card">
+          <img src="https://res.cloudinary.com/donf76gql/image/upload/v1779304507/WhatsApp_Image_2026-05-20_at_7.34.13_PM_pixi8g.jpg" alt="Tripti Ghildiyal" class="council-avatar-img" loading="lazy">
+          <h4>Tripti Ghildiyal</h4>
+          <div class="council-dept-title">Social Media Head</div>
+          <p class="council-wish-text">
+            “Trending across campus with viral festive cheer, pure vibes, and lifelong bonds! Don’t forget to tag @word.wizards.adgips on your stories!”
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE 2: THE FESTIVE GIFT VAULT (SOAN PAPDI & MEMBER GIFTS) -->
+    <section id="gift-vault" class="gift-vault-section">
+      <div class="section-header">
+        <span class="section-tag">Word Wizards Gift Hamper</span>
+        <h2 class="section-title">The Diwali Gift Vault (उपहार पिटारा)</h2>
+        <p class="section-subtitle">
+          Because no Indian Diwali is complete without love, laughter, and the legendary box of Soan Papdi!
+        </p>
+      </div>
+
+      <div class="gifts-showcase-grid">
+        <!-- 1. The Legendary Soan Papdi Box -->
+        <div class="gift-box-card soan-papdi-card">
+          <span class="gift-badge-corner">Iconic Sweet</span>
+          <div class="gift-icon-container">🍬</div>
+          <h3>The Eternal Soan Papdi Box</h3>
+          <div class="gift-hindi-title">सोन पापड़ी का उपहार</div>
+          <p class="gift-desc">
+            The unstoppable currency of Diwali! Golden, flaky, and garnished with roasted pistachios. Taste a piece or pass it along to another department!
+          </p>
+          <button id="btn-unbox-soan" class="gift-action-btn">
+            <span>🎁</span> Open Soan Papdi Box
+          </button>
+        </div>
+
+        <!-- 2. Department Digital Badge -->
+        <div class="gift-box-card">
+          <span class="gift-badge-corner">Collectible</span>
+          <div class="gift-icon-container">🏅</div>
+          <h3>Department Wizard Badge</h3>
+          <div class="gift-hindi-title">विभागीय सम्मान पदक</div>
+          <p class="gift-desc">
+            Select your department among our 9 pillars and claim your official First Year Word Wizards digital Diwali badge of honor!
+          </p>
+          <div class="form-group" style="margin-bottom: 0.75rem;">
+            <select id="badge-dept-select" class="form-select" style="padding: 0.45rem 0.75rem; font-size: 0.82rem;">
+              <option value="Technical">Technical</option>
+              <option value="Anchoring">Anchoring</option>
+              <option value="Graphics">Graphics</option>
+              <option value="Video Editing">Video Editing</option>
+              <option value="Research & Content">Research & Content</option>
+              <option value="Event Management">Event Management</option>
+              <option value="Creative">Creative</option>
+              <option value="PR & Sponsorship">PR & Sponsorship</option>
+              <option value="Social Media">Social Media</option>
+            </select>
+          </div>
+          <button id="btn-claim-badge" class="gift-action-btn">
+            <span>🌟</span> Claim My Badge
+          </button>
+        </div>
+
+        <!-- 3. Quill of Destiny (Diwali Fortune) -->
+        <div class="gift-box-card">
+          <span class="gift-badge-corner">Fortune</span>
+          <div class="gift-icon-container">📜</div>
+          <h3>The Quill of Destiny</h3>
+          <div class="gift-hindi-title">दीपावली भविष्यफल</div>
+          <p class="gift-desc">
+            Unroll the sacred enchanted scroll to reveal your personalized Diwali prophecy and creative destiny in college this year!
+          </p>
+          <button id="btn-unroll-fortune" class="gift-action-btn">
+            <span>✨</span> Unroll My Fortune
+          </button>
+        </div>
+      </div>
+
+      <!-- Soan Papdi Interactive Unbox Area -->
+      <div id="soan-unbox-panel" class="soan-papdi-unbox-panel">
+        <h4 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold-200);">
+          Freshly Unboxed Word Wizards Soan Papdi 🍬
+        </h4>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.25rem;">
+          Crisp, melt-in-the-mouth cardamom flakes with pure silver vark and almonds!
+        </p>
+
+        <div class="soan-box-visual">
+          <div class="soan-cube" title="Click to relish!"></div>
+          <div class="soan-cube" title="Click to relish!"></div>
+          <div class="soan-cube" title="Click to relish!"></div>
+          <div class="soan-cube" title="Click to relish!"></div>
+          <div class="soan-cube" title="Click to relish!"></div>
+          <div class="soan-cube" title="Click to relish!"></div>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <button id="btn-eat-soan" class="spark-btn primary">
+            <span>😋</span> Relish a Piece! (<span id="soan-tally">0 Eaten</span>)
+          </button>
+          <button id="btn-pass-soan" class="spark-btn">
+            <span>📦</span> Regift / Pass to Another Dept!
+          </button>
+        </div>
+        <div id="soan-pass-tracker" class="soan-pass-tracker">
+          📦 <strong>The Sacred Chain:</strong> Passed with love from <em>Graphics</em> to <em>Technical</em>!
+        </div>
+      </div>
+
+      <!-- Fortune Reveal Box -->
+      <div id="fortune-reveal-box" class="fortune-reveal-box">
+        <p id="fortune-quote-text" class="fortune-quote">“Your voice will anchor a breakthrough debate this semester.”</p>
+        <span id="fortune-destiny-text" class="fortune-destiny">Destiny: Master Orator of the First Year</span>
+      </div>
+    </section>
+
+    <!-- FEATURE 3: VIRTUAL FIRECRACKER SIMULATOR (PATAKHA ARCADE) -->
+    <section id="patakha-simulator" class="patakha-simulator-section">
+      <div class="eco-badge-row">
+        <div class="eco-pledge-badge">
+          <span>🌿</span> 100% Eco-Friendly • Zero Air Pollution • Safe for Pets & Elders
+        </div>
+      </div>
+
+      <div class="section-header">
+        <span class="section-tag">Interactive Patakha Zone</span>
+        <h2 class="section-title">Virtual Firecracker Simulator</h2>
+        <p class="section-subtitle">
+          Experience the pure thrill of bursting authentic Diwali crackers with realistic sights, physical trajectories, and acoustics — completely safe & green!
+        </p>
+      </div>
+
+      <!-- Firecracker Inventory Selector -->
+      <div class="patakha-inventory-grid">
+        <div class="patakha-item-card active" data-type="anaar">
+          <span class="patakha-icon-wrap">🌸</span>
+          <div class="patakha-name">Anaar</div>
+          <div class="patakha-hindi">अनार (Flowerpot)</div>
+          <div class="patakha-tag">Towering Golden Fountain</div>
+        </div>
+
+        <div class="patakha-item-card" data-type="chakri">
+          <span class="patakha-icon-wrap">🌀</span>
+          <div class="patakha-name">Zameen Chakri</div>
+          <div class="patakha-hindi">चक्री (Ground Spinner)</div>
+          <div class="patakha-tag">1200 RPM Radial Rings</div>
+        </div>
+
+        <div class="patakha-item-card" data-type="ladi">
+          <span class="patakha-icon-wrap">🧨</span>
+          <div class="patakha-name">1000-Wali Ladi</div>
+          <div class="patakha-hindi">लड़ी (Rapid String)</div>
+          <div class="patakha-tag">Machine-Gun Staccato Pops</div>
+        </div>
+
+        <div class="patakha-item-card" data-type="bomb">
+          <span class="patakha-icon-wrap">💣</span>
+          <div class="patakha-name">Sutli Bomb</div>
+          <div class="patakha-hindi">सुतली बम (Atom Bomb)</div>
+          <div class="patakha-tag">Screen-Shaking Sub-Bass</div>
+        </div>
+
+        <div class="patakha-item-card" data-type="rocket">
+          <span class="patakha-icon-wrap">🚀</span>
+          <div class="patakha-name">Sky Rocket</div>
+          <div class="patakha-hindi">रॉकेट (High Flyer)</div>
+          <div class="patakha-tag">Screaming Ascent & Burst</div>
+        </div>
+
+        <div class="patakha-item-card" data-type="phuljhadi">
+          <span class="patakha-icon-wrap">✨</span>
+          <div class="patakha-name">Phuljhadi</div>
+          <div class="patakha-hindi">फुलझड़ी (Sparkler)</div>
+          <div class="patakha-tag">Neon Sparkling Rod</div>
+        </div>
+      </div>
+
+      <!-- Interactive Arena Canvas -->
+      <div class="patakha-arena-container">
+        <canvas id="patakha-arena-canvas"></canvas>
+        <div class="patakha-arena-overlay-hint">
+          <span>🎯 Tap or click anywhere on the ground to ignite the selected firecracker!</span>
+        </div>
+      </div>
+
+      <!-- Action Bar -->
+      <div class="patakha-controls-bar">
+        <div class="patakha-action-buttons">
+          <button id="btn-burst-selected" class="btn-patakha-action burst-now">
+            <span>🔥</span> Burst Selected Patakha
+          </button>
+          <button id="btn-chain-dhamaka" class="btn-patakha-action chain-dhamaka">
+            <span>🎆</span> Diwali Dhamaka (Burst All!)
+          </button>
+          <button id="btn-toggle-sfx" class="btn-patakha-action sound-toggle active" title="Toggle Firecracker Sound Effects">
+            <span id="sfx-status-icon">🔊</span> <span id="sfx-status-label">Cracker Sound: ON</span>
+          </button>
+          <button id="btn-clear-arena" class="btn-patakha-action clear-arena">
+            <span>🧹</span> Clear Ground
+          </button>
+        </div>
+
+        <div class="eco-stats-pill">
+          <span id="eco-cracker-count">0 Eco-Crackers Burst! 🌿</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Fireworks Sandbox Dock -->
+    <section class="fireworks-dock-section">
+      <div class="fireworks-dock-header">
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffd700">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8 5.8 21.3l2.4-7.4L2 9.4h7.6z"/>
+          </svg>
+          Interactive Fireworks & Sparkler Dock
+        </h3>
+        <div class="dock-controls-grid">
+          <button id="btn-launch-firework" class="spark-btn primary">
+            <span>🚀</span> Launch Sky Rocket
+          </button>
+          <button id="btn-grand-finale" class="spark-btn">
+            <span>🎆</span> Grand Finale Barrage
+          </button>
+          <button id="btn-toggle-sparkler" class="spark-btn active">
+            <span>✨</span> Sparkler Wand: On
+          </button>
+          <button id="btn-sound-toggle" class="spark-btn">
+            <span class="btn-label">Festive Music: Muted 🔇</span>
+          </button>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+        <span>💡 Pro Tip:</span> Drag your cursor across the screen to create a golden Phuljhadi trail, or click into the sky to launch fireworks!
+      </p>
+    </section>
+
+    <!-- FEATURE 4: DEPARTMENT-WISE WISHING WALL & FLOATING SKY LANTERNS -->
+    <section id="dept-wishes-wall" class="wishing-wall-section">
+      <div class="section-header">
+        <span class="section-tag">Word Wizards Community</span>
+        <h2 class="section-title">Department-Wise Wishing Well</h2>
+        <p class="section-subtitle">
+          Filter and browse heartfelt Diwali blessings across our <strong>9 official departments</strong>, or release your own Sky Lantern!
+        </p>
+      </div>
+
+      <!-- 9 Department Filter Tabs -->
+      <div class="dept-filter-bar">
+        <button class="dept-pill-btn active" data-dept="all">All Departments</button>
+        <button class="dept-pill-btn" data-dept="Technical">Technical</button>
+        <button class="dept-pill-btn" data-dept="Anchoring">Anchoring</button>
+        <button class="dept-pill-btn" data-dept="Graphics">Graphics</button>
+        <button class="dept-pill-btn" data-dept="Video Editing">Video Editing</button>
+        <button class="dept-pill-btn" data-dept="Research & Content">Research & Content</button>
+        <button class="dept-pill-btn" data-dept="Event Management">Event Management</button>
+        <button class="dept-pill-btn" data-dept="Creative">Creative</button>
+        <button class="dept-pill-btn" data-dept="PR & Sponsorship">PR & Sponsorship</button>
+        <button class="dept-pill-btn" data-dept="Social Media">Social Media</button>
+      </div>
+
+      <div class="wishing-container">
+        <!-- Wish Submission Form -->
+        <div class="wish-form-card">
+          <h3>Release a Sky Lantern</h3>
+          <p>Send your festive blessing to fellow first-year wizards in your department.</p>
+
+          <form id="diwali-wish-form">
+            <div class="form-group">
+              <label for="wish-name">Your Full Name</label>
+              <input type="text" id="wish-name" class="form-input" placeholder="e.g. Shaurya Anchal" required>
+            </div>
+
+            <div class="form-group">
+              <label>Your Department(s) <span style="font-size: 0.8rem; font-weight: 400; color: var(--gold-300);">(Select one or more)</span></label>
+              <div id="wish-dept-checkboxes" class="dept-checkbox-grid">
+                <label class="dept-checkbox-pill">
+                  <input type="checkbox" name="wish_dept" value="Technical" checked>
+                  <span class="pill-content">Technical</span>
+                </label>
+                <label class="dept-checkbox-pill">
+                  <input type="checkbox" name="wish_dept" value="Anchoring">
+                  <span class="pill-content">Anchoring</span>
+                </label>
+                <label class="dept-checkbox-pill">
+                  <input type="checkbox" name="wish_dept" value="Graphics">
+                  <span class="pill-content">Graphics</span>
+                </label>
+                <label class="dept-checkbox-pill">
+                  <input type="checkbox" name="wish_dept" value="Video Editing">
+                  <span class="pill-content">Video Editing</span>
+                </label>
+                <label class="dept-checkbox-pill">
+                  <input type="checkbox" name="wish_dept" value="Research & Content">
+                  <span class="pill-content">Research & Content</span>
+                </label>
+                <label class="dept-checkbox-pill">
+                  <input type="checkbox" name="wish_dept" value="Event Management">
+                  <span class="pill-content">Event Management</span>
+                </label>
+                <label class="dept-checkbox-pill">
+                  <input type="checkbox" name="wish_dept" value="Creative">
+                  <span class="pill-content">Creative</span>
+                </label>
+                <label class="dept-checkbox-pill">
+                  <input type="checkbox" name="wish_dept" value="PR & Sponsorship">
+                  <span class="pill-content">PR & Sponsorship</span>
+                </label>
+                <label class="dept-checkbox-pill">
+                  <input type="checkbox" name="wish_dept" value="Social Media">
+                  <span class="pill-content">Social Media</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="wish-text">Your Diwali Wish / Message</label>
+              <textarea id="wish-text" rows="3" class="form-textarea" placeholder="Wishing all first-year Word Wizards endless joy, radiant debriefs, and brilliant creative milestones!" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit-wish">
+              <span>🏮</span> Light & Release Sky Lantern
+            </button>
+          </form>
+        </div>
+
+        <!-- Live Stream of Department Wishes -->
+        <div class="wishes-stream-wrapper">
+          <div class="wishes-stream-header">
+            <h4>Department Dispatches</h4>
+            <span id="wish-count-pill" class="wishes-count-pill">Loading wishes...</span>
+          </div>
+          <div id="wishes-stream" class="wishes-stream"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFICIAL SOCIAL CONNECT & COMMUNITY BANNER -->
+    <section class="social-connect-banner">
+      <h3>Connect with Word Wizards</h3>
+      <p>Follow our official handles for campus updates, workshops, events, and debriefs!</p>
+      <div class="social-links-row">
+        <a href="https://www.instagram.com/word.wizards.adgips/" target="_blank" rel="noopener noreferrer" class="social-pill-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <span>Instagram: @word.wizards.adgips</span>
+        </a>
+        <a href="https://www.linkedin.com/company/word-wizards-adgips/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="social-pill-btn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <span>LinkedIn: word-wizards-adgips</span>
+        </a>
+        <a href="mailto:wordwizards@adgips.ac.in" class="social-pill-btn">
+          <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+          <span>wordwizards@adgips.ac.in</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer & Tribute to Word Wizards -->
+    <footer class="footer-tribute">
+      <div class="ww-insignia">
+        <h3>Word Wizards</h3>
+        <p class="subtitle">The First Year Student Development Society</p>
+        <p class="college-sec">Dr. Akhilesh Das Gupta Institute of Professional Studies (ADGIPS), New Delhi</p>
+      </div>
+
+      <!-- 9 Departments Display -->
+      <div class="footer-depts-list">
+        <span class="dept-badge">✦ Technical</span>
+        <span class="dept-badge">✦ Anchoring</span>
+        <span class="dept-badge">✦ Graphics</span>
+        <span class="dept-badge">✦ Video Editing</span>
+        <span class="dept-badge">✦ Research & Content</span>
+        <span class="dept-badge">✦ Event Management</span>
+        <span class="dept-badge">✦ Creative</span>
+        <span class="dept-badge">✦ PR & Sponsorship</span>
+        <span class="dept-badge">✦ Social Media</span>
+      </div>
+
+      <p class="footer-copy">
+        Conferred with love and mentorship by Dr. Surayya Farhat (Faculty Coordinator) and the Executive Council for all First-Year Word Wizards.<br>
+        May this Deepavali illuminate your thoughts, elevate your voice, and guide your journey! 🪔✨
+      </p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
